@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Demo</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="app1">
+        <h1 v:if="seen" :style="style">你现在可以看到我吗？{{seen}}</h1>
+        <button v-on:click="colorChange">CHANGE</button>
+        <span>{{message}}</span>
+        <button v-on:click="reverseMessage">Click Me</button>
+        <br>
+        <input v-model="info">
+        <span>{{info}}</span>
+        <ul>
+            <li v-for="(item, index) in items">
+                {{index}}- name: {{item.name}} - age: {{item.age}} 
+                <button @click="item.age += 1"> + </button>
+                <button @click="item.age -= 1"> - </button>
+                <span v:if="item.age === 0" v-bind:style="style">TOO OLD NOW!!</span>
+            </li>
+            <li>Total Age: {{ageSum}}</li>
+        </ul>
+    </div>
+
+    <script src="vue1.js"></script>
+</body>
+</html>
