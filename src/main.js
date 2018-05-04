@@ -9,6 +9,8 @@ import Index from './pages/Index'
 import Loading from './components/Loading'
 import MsgDialog from './components/MsgDialog'
 import TestPage from './pages/TestPage'
+import ErrorPage from './pages/ErrorPage'
+import AboutUsPage from './pages/AboutUsPage'
 
 Vue.prototype.$mdui = mdui
 Vue.prototype.$bus = new Vue()
@@ -19,7 +21,9 @@ const vue_router = new VueRouter({
     {path: '/', component: Index},
     {path: '/loading', component: Loading},
     {path: '/dialog', component: MsgDialog},
-    {path: '/test', component: TestPage}
+    {path: '/test', component: TestPage},
+    {path: '/error', component: ErrorPage},
+    {path: '/about', component: AboutUsPage}
   ]
 })
 
