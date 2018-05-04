@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header class="mdui-appbar mdui-appbar-fixed">
-      <div class="mdui-toolbar mdui-color-deep-purple mdui-shadow-5">
+      <div class="mdui-toolbar mdui-color-deep-purple">
         <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}">
           <i class="mdui-icon material-icons">menu</i>
         </span>
@@ -13,7 +13,10 @@
       </div>
     </header>
 
-    <router-view></router-view>
+    <left-drawer logged="true"></left-drawer>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
 
     <footer class="mdui-bottom-nav mdui-color-deep-purple mdui-m-t-5">
       <div class="mdui-container">
@@ -29,8 +32,10 @@
 </template>
 
 <script>
-export default {
-  name: 'app',
-}
+    import LeftDrawer from './components/LeftDrawer.vue'
+    export default {
+      name: 'app',
+      components: {LeftDrawer}
+    }
 </script>
 

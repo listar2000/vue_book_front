@@ -1,6 +1,5 @@
 <template>
     <div id="index">
-        <left-drawer></left-drawer>
         <div class="mdui-container">
             <div class="mdui-card mdui-col-xs-12 mdui-m-t-4">
                 <div class="mdui-typo-display-3 mdui-text-center">
@@ -22,10 +21,7 @@
 </template>
     
 <script>
-    import LeftDrawer from '../components/LeftDrawer.vue'
-
     export default {
         name: 'index',
-        components: {LeftDrawer},
     }
 </script>

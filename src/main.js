@@ -6,19 +6,25 @@ import App from './App'
 Vue.use(VueRouter)
 
 import Index from './pages/Index'
+import Loading from './components/Loading'
+import MsgDialog from './components/MsgDialog'
+import TestPage from './pages/TestPage'
 
 Vue.prototype.$mdui = mdui
 Vue.prototype.$bus = new Vue()
 
-const router = new VueRouter({
+const vue_router = new VueRouter({
   mode: 'history',
   routes: [
-    {path: '/', component: Index}
+    {path: '/', component: Index},
+    {path: '/loading', component: Loading},
+    {path: '/dialog', component: MsgDialog},
+    {path: '/test', component: TestPage}
   ]
 })
 
 new Vue({
   el: '#app',
-  router,
+  router: vue_router,
   render: h => h(App)
 })
