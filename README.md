@@ -31,6 +31,7 @@ vue init webpack your-project-name
 ```
 
 3. Run the project with hot-reload
+
 ``` bash
 # install dependencies
 npm install
@@ -43,6 +44,7 @@ npm run build
 ```
 
 4. init git in the directory
+
 ``` bash
 git init
 
@@ -55,6 +57,7 @@ git add remote origin master https://git.hfi.me/HFIProgramming/BookSale_Front
 ```
 
 5. pull the resources from remote
+
 ```bash
 git fetch -all 
 
