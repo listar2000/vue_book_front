@@ -7,11 +7,16 @@
         </span>
         <a href="/" class="mdui-typo-headline">BOOK@HFI</a>
         <div class="mdui-toolbar-spacer"></div>
-        <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-m-r-4" mdui-tooltip="{content: '登录/注册'}">
+        <span v-if="!logged" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-m-r-4" mdui-dialog="{target: '#userDialog'}" mdui-tooltip="{content: '登录/注册'}">
           <i class="mdui-icon material-icons">account_circle</i>
         </span>
+        <a class="mdui-typo-headline mdui-btn mdui-ripple" v-else>
+          已登录 😄
+        </a>
       </div>
     </header>
+
+    <login-dialog v-if="!logged"></login-dialog>
 
     <left-drawer :logged="logged"></left-drawer>
     <transition name="fade">
@@ -33,21 +38,19 @@
 
 <script>
     import LeftDrawer from './components/LeftDrawer.vue'
+    import LoginDialog from './components/LoginDialog.vue'
     export default {
       name: 'app',
-      components: {LeftDrawer},
+      components: {LeftDrawer, LoginDialog},
       data() {
         return {
           logged: false
         }
       },
-      methods: {
-        userLogin() {
-          this.logged = true;
-        },
-        userLogout() {
-          this.logged = false;
-        }
+      mounted() {
+        this.$bus.$on('login-in', (status) => {
+          this.logged = status
+        })
       }
     }
 </script>
