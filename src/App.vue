@@ -13,11 +13,11 @@
       </div>
     </header>
 
-    <left-drawer logged="true"></left-drawer>
+    <left-drawer :logged="logged"></left-drawer>
     <transition name="fade">
       <router-view></router-view>
     </transition>
-
+    
     <footer class="mdui-bottom-nav mdui-color-deep-purple mdui-m-t-5">
       <div class="mdui-container">
         <div class="mdui-typo mdui-typo-caption mdui-text-center mdui-m-t-2">
@@ -35,7 +35,20 @@
     import LeftDrawer from './components/LeftDrawer.vue'
     export default {
       name: 'app',
-      components: {LeftDrawer}
+      components: {LeftDrawer},
+      data() {
+        return {
+          logged: false
+        }
+      },
+      methods: {
+        userLogin() {
+          this.logged = true;
+        },
+        userLogout() {
+          this.logged = false;
+        }
+      }
     }
 </script>
 

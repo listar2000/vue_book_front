@@ -27,10 +27,16 @@
                 </li>
             </div>
             <router-link to="/about">
-            <li class="mdui-list-item mdui-ripple">
-                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-red">list</i>
-                <div class="mdui-list-item-content">关于我们💪</div>
-            </li>
+                <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-red">list</i>
+                    <div class="mdui-list-item-content">关于我们💪</div>
+                </li>
+            </router-link>
+            <router-link to="/card">
+                <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">explore</i>
+                    <div class="mdui-list-item-content">发现书籍📚</div>
+                </li>
             </router-link>
         </ul>
     </div>

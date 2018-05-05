@@ -11,6 +11,7 @@ import MsgDialog from './components/MsgDialog'
 import TestPage from './pages/TestPage'
 import ErrorPage from './pages/ErrorPage'
 import AboutUsPage from './pages/AboutUsPage'
+import BookListPage from './pages/BookListPage'
 
 Vue.prototype.$mdui = mdui
 Vue.prototype.$bus = new Vue()
@@ -23,7 +24,8 @@ const vue_router = new VueRouter({
     {path: '/dialog', component: MsgDialog},
     {path: '/test', component: TestPage},
     {path: '/error', component: ErrorPage},
-    {path: '/about', component: AboutUsPage}
+    {path: '/about', component: AboutUsPage},
+    {path: '/card', component: BookListPage},
   ]
 })
 
