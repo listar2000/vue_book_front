@@ -10,15 +10,24 @@
         <span v-if="!logged" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white mdui-m-r-4" mdui-dialog="{target: '#userDialog'}" mdui-tooltip="{content: '登录/注册'}">
           <i class="mdui-icon material-icons">account_circle</i>
         </span>
-        <a class="mdui-typo-headline mdui-btn mdui-ripple" v-else>
+        <a class="mdui-typo-headline mdui-btn mdui-ripple" v-else mdui-menu="{target: '#userMenu'}">
           已登录 😄
         </a>
+        <ul class="mdui-menu mdui-menu-cascade" id="userMenu">
+          <li class="mdui-menu-item">
+            <a href="" class="mdui-ripple">
+              <i class="mdui-icon material-icons">lock_open</i>
+              注销
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
 
     <login-dialog v-if="!logged"></login-dialog>
 
     <left-drawer :logged="logged"></left-drawer>
+
     <transition name="fade">
       <router-view></router-view>
     </transition>
